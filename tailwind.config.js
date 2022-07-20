@@ -1,10 +1,11 @@
+const themes = require("./src/Themes/index");
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
+  content: ["{pages,src}/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
+  important: true, 
+  theme: ["dark"],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: [{ ...themes }],
   },
-  plugins: [require("daisyui")]
-}
+};
